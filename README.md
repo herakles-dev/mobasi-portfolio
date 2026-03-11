@@ -2,7 +2,7 @@
 
 **D. Michael Piscitelli** | Chicago, IL | hello@herakles.dev | [herakles.dev](https://herakles.dev)
 
-Self-hosted Linux platform. 90 containers. 95 AI agents across 8 team formations. A plug-and-play framework that runs across any LLM provider. Everything orchestrated through Claude Code on bare metal. This repo curates the work most relevant to Mobasi's Founding Engineer role.
+Self-hosted Linux platform. 90 containers. 95 AI agents across 8 team formations. A plug-and-play framework that runs across any LLM provider. Everything orchestrated through Claude Code. This repo curates the work most relevant to Mobasi's Founding Engineer role.
 
 ---
 
@@ -75,7 +75,7 @@ Every project below was built through Claude Code on the same self-hosted platfo
 | **CK Reynolds Tax** | Client SaaS — 55 API routes, 2FA, IRS compliant. Next.js, Supabase. | [Showcase](https://github.com/herakles-dev/ckreynolds-tax-showcase) |
 | **Claude-Gemini Bridge** | Co-processor CLI — delegates reasoning to Gemini API with caching. | [Source](https://github.com/herakles-dev/claude-gemini) |
 | **Claude-Pi Bridge** | Co-processor CLI — delegates deterministic tasks with safety firewall. | [Source](https://github.com/herakles-dev/claude-pi) |
-| **Portfolio Showcase** | Full platform overview — 33 services, SSO, observability. | [Source](https://github.com/herakles-dev/portfolio-showcase) |
+| **Portfolio Showcase** | Full platform overview — SSO, observability, architecture diagrams. | [Source](https://github.com/herakles-dev/portfolio-showcase) |
 
 ---
 
@@ -87,8 +87,7 @@ Every project below was built through Claude Code on the same self-hosted platfo
 | Registered services | 26 |
 | AI agents | 95 (69 active) |
 | Docker-compose projects | 42 |
-| SSL-enabled domains | 44+ |
-| Rust lines of code | 22,500+ |
+| SSL-enabled domains | 30+ |
 | Total tests (top 3 projects) | 1,488 |
 | Claude Code hours | 1,600+ |
 
@@ -109,7 +108,7 @@ Selected source files from the platform, browsable directly in this repo:
 | [`samples/enforcement/guard-write-gates.sh`](samples/enforcement/guard-write-gates.sh) | Chain-of-custody enforcement — formation-registry file ownership, blocks concurrent agent writes, schema validation |
 | [`samples/enforcement/track-autonomy.sh`](samples/enforcement/track-autonomy.sh) | Trust escalation — 5-level autonomy (A0→A4), JSONL audit with diff hashing, flock-safe concurrent writes |
 
-Full Rust source (22,500 LOC) and security lab architecture available on request.
+Full Rust source and security lab architecture available on request.
 
 ---
 
