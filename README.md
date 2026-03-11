@@ -115,7 +115,7 @@ Full Rust source (22,500 LOC) and security lab architecture available on request
 
 ## Server
 
-Intel i7-8700 (6C/12T) | 128GB RAM | 906GB storage | Debian Linux | Bare metal, purchased at auction. Built and operated independently.
+Intel i7-8700 (6C/12T) | 128GB RAM | 906GB storage | Debian Linux | Remote VDS. Built and operated independently.
 
 ---
 
