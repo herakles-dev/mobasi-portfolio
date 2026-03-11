@@ -94,6 +94,21 @@ Every project below was built through Claude Code on the same self-hosted platfo
 
 ---
 
+## Code Samples
+
+Selected source files from the platform, browsable directly in this repo:
+
+| File | What It Shows |
+|------|---------------|
+| [`samples/orchestration/guard-enforcement.sh`](samples/orchestration/guard-enforcement.sh) | Boundary guard — risk classification, autonomy checking, tool policy enforcement at every tool call |
+| [`samples/orchestration/forge_guards.py`](samples/orchestration/forge_guards.py) | Risk classifier (21+ HIGH patterns), path sandbox, autonomy manager with escalation cooldown |
+| [`samples/orchestration/forge_orchestrator.py`](samples/orchestration/forge_orchestrator.py) | Coordination engine — detect, configure, plan, orchestrate, monitor across multi-service builds |
+| [`samples/verification/forge_verify.py`](samples/verification/forge_verify.py) | 3-layer runtime verification: static syntax, server startup, headless browser UI + API checks |
+
+Full source for Nova Forge is public at [nova-forge](https://github.com/herakles-dev/nova-forge).
+
+---
+
 ## Server
 
 Intel i7-8700 (6C/12T) | 128GB RAM | 906GB storage | Debian Linux | Bare metal, purchased at auction. Built and operated independently.
