@@ -100,12 +100,16 @@ Selected source files from the platform, browsable directly in this repo:
 
 | File | What It Shows |
 |------|---------------|
-| [`samples/orchestration/guard-enforcement.sh`](samples/orchestration/guard-enforcement.sh) | Boundary guard — risk classification, autonomy checking, tool policy enforcement at every tool call |
-| [`samples/orchestration/forge_guards.py`](samples/orchestration/forge_guards.py) | Risk classifier (21+ HIGH patterns), path sandbox, autonomy manager with escalation cooldown |
-| [`samples/orchestration/forge_orchestrator.py`](samples/orchestration/forge_orchestrator.py) | Coordination engine — detect, configure, plan, orchestrate, monitor across multi-service builds |
-| [`samples/verification/forge_verify.py`](samples/verification/forge_verify.py) | 3-layer runtime verification: static syntax, server startup, headless browser UI + API checks |
+| [`samples/agent-loop/claude_loop_engine.py`](samples/agent-loop/claude_loop_engine.py) | Autonomous agent protocol (excerpt) — 7-step INSPECT→PLAN→VALIDATE→EXECUTE→VERIFY→LOG→DECIDE, GDB-style debug with breakpoints and goal override |
+| [`samples/agent-loop/orchestrator.py`](samples/agent-loop/orchestrator.py) | Multi-phase workflow (excerpt) — intelligence loading, recon coordination, human-in-the-loop checkpoints, state persistence |
+| [`samples/agent-loop/evidence_collector.py`](samples/agent-loop/evidence_collector.py) | Forensic evidence packaging — ReproductionStep dataclass, multi-modal capture (screenshots, HTTP, cURL), submission-ready bundles |
+| [`samples/rust-compute/math_engine.rs`](samples/rust-compute/math_engine.rs) | SIMD compute (excerpt) — AVX2/AVX512/FMA runtime detection via raw_cpuid, Rayon thread pool, RK4 ODE integration, parallel trajectory |
+| [`samples/rust-compute/cache.rs`](samples/rust-compute/cache.rs) | 3-tier predictive cache — L1 hot (moka), L2 zstd-compressed, L3 memory-mapped, background precomputation with trend analysis |
+| [`samples/rust-compute/pipeline.rs`](samples/rust-compute/pipeline.rs) | Async pipeline — crossbeam channels, DashMap concurrent cache, LZ4 streaming compression, adaptive performance scheduling |
+| [`samples/enforcement/guard-write-gates.sh`](samples/enforcement/guard-write-gates.sh) | Chain-of-custody enforcement — formation-registry file ownership, blocks concurrent agent writes, schema validation |
+| [`samples/enforcement/track-autonomy.sh`](samples/enforcement/track-autonomy.sh) | Trust escalation — 5-level autonomy (A0→A4), JSONL audit with diff hashing, flock-safe concurrent writes |
 
-Full source for Nova Forge is public at [nova-forge](https://github.com/herakles-dev/nova-forge).
+Full Rust source (22,500 LOC) and security lab architecture available on request.
 
 ---
 
