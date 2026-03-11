@@ -301,3 +301,59 @@ class DebugController:
                         status = "ON" if bp.enabled else "OFF"
                         print(f"  [{status}] {bp.name}: {bp.condition_type}="
                               f"{bp.value} (hits: {bp.hit_count})")
+
+            elif op == "bd" and arg:
+                for bp in self.breakpoints:
+                    if bp.name == arg:
+                        bp.enabled = False
+                        print(f"  → Disabled {bp.name}")
+                        break
+                else:
+                    print(f"  → Breakpoint {arg} not found")
+
+            elif op in ("i", "inspect"):
+                if self._last_state:
+                    s = self._last_state
+                    print(f"\n  === FULL STATE ===")
+                    print(f"  URL: {s.url}")
+                    print(f"  Title: {s.title}")
+                    print(f"  Forms: {len(s.forms)}")
+                    for fi, form in enumerate(s.forms[:5]):
+                        print(f"    [{fi}] action={form.get('action')} "
+                              f"method={form.get('method')}")
+                        for fld in form.get('fields', [])[:5]:
+                            print(f"        {fld.get('name')} ({fld.get('type')})")
+                    print(f"  Elements: {len(s.interactive_elements)}")
+                    for ei, elem in enumerate(s.interactive_elements[:10]):
+                        print(f"    [{ei}] <{elem.get('tag')}> "
+                              f"{elem.get('text', '')[:40]} id={elem.get('id')}")
+                    print(f"  Network: {len(s.network_requests)} requests")
+                    for req in s.network_requests[-5:]:
+                        print(f"    {req.get('method', 'GET')} {req.get('url', '')[:60]}")
+                    print(f"  Cookies: {len(s.cookies)}")
+                    print(f"  Errors: {s.errors}")
+                    if s.screenshot_b64:
+                        ss_path = self.debug_dir / "inspect_current.png" if self.debug_dir else None
+                        if ss_path:
+                            try:
+                                with open(ss_path, 'wb') as f:
+                                    f.write(base64.b64decode(s.screenshot_b64))
+                                print(f"  Screenshot saved: {ss_path}")
+                            except Exception:
+                                pass
+                    print(f"  === END STATE ===\n")
+
+            elif op in ("h", "history"):
+                if not findings:
+                    print("  No findings yet")
+                else:
+                    for f in findings:
+                        print(f"  [{f.severity.value.upper()}] {f.type} — {f.endpoint}")
+
+            elif op in ("q", "quit"):
+                self._abort = True
+                return "abort"
+
+            else:
+                print("  Unknown command. Try: c, s, g <goal>, f <focus>, "
+                      "r <risk>, b <type> <val>, bl, bd <name>, i, h, q")
